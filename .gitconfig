@@ -3,3 +3,5 @@
 	email = andrewj.fahmy@gmail.com
 [core]
 	excludefile = ~/.gitignore
+[pull]
+	rebase = false
