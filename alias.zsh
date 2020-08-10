@@ -20,7 +20,9 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 
+alias @@='source ~/.zshrc'
+alias vim=nvim
 
-
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
+export BROWSER=firefox
