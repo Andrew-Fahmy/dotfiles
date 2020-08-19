@@ -14,7 +14,7 @@ set wildignore=**/node_modues/**
 set path+=**
 set hidden
 
-set number 
+set number
 set relativenumber
 set nowrap
 
@@ -29,7 +29,7 @@ set nohlsearch
 
 set updatetime=50
 
-set cmdheight=1
+set cmdheight=2
 
 set noswapfile
 set nobackup
@@ -51,11 +51,11 @@ call plug#end()
 
 set background=dark
 
-"let g:solarized_termcolors=256
-"colorscheme solarized
+let g:solarized_termcolors=256
+colorscheme solarized
 
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+"let g:gruvbox_contrast_dark='hard'
+"colorscheme gruvbox
 
 
 let mapleader=' '

@@ -8,6 +8,8 @@ alias grep='grep --color=auto'
 alias mv='mv -i'
 alias rm='rm -i'
 
+alias yeet='rm -rf'
+alias please='sudo $(fc -ln -1)'
 
 alias gs='git status'
 
@@ -22,6 +24,8 @@ alias gcam='git commit -am'
 
 alias @@='source ~/.zshrc'
 alias vim=nvim
+
+alias rr='bash ~/dotfiles/roll.sh'
 
 export EDITOR=nvim
 export PAGER=less
