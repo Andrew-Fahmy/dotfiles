@@ -1,6 +1,6 @@
 set nocompatible
 
-syntax enable
+syntax on
 filetype plugin indent on
 
 set ignorecase
@@ -40,23 +40,28 @@ set undofile
 
 call plug#begin('~/.config/.nvim/plugged')
 
-Plug 'altercation/vim-colors-solarized'
-Plug 'gruvbox-community/gruvbox'
 Plug 'vim-airline/vim-airline'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
+
+Plug 'https://github.com/joshdick/onedark.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'gruvbox-community/gruvbox'
 
 call plug#end()
 
 
 set background=dark
 
-let g:solarized_termcolors=256
-colorscheme solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
 "let g:gruvbox_contrast_dark='hard'
 "colorscheme gruvbox
 
+colorscheme onedark
 
 let mapleader=' '
 let g:netrw_browse_split=0
@@ -75,3 +80,8 @@ nnoremap <leader>b :Lexplore<CR>
 
 nnoremap <leader>ga :G<CR>
 nnoremap <leader>gc :Gcommit<CR>
+
+
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
