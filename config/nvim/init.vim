@@ -46,7 +46,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 
-Plug 'https://github.com/joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'gruvbox-community/gruvbox'
 

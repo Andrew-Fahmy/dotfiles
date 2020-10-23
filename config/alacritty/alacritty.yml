@@ -15,7 +15,7 @@ window:
   decorations: none
 
 scrolling:
-  history: 0
+  history: 1000
 
 # Font configuration
 font:

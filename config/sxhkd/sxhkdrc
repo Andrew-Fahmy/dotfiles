@@ -1,0 +1,65 @@
+# restart sxhkd
+super + shift + Delete
+    pkill -USR1 -x sxhkd
+
+
+###############
+# BSPWM binds #
+###############
+
+# restart bspwm
+super + shift + Escape
+    bspc wm -r
+
+# kill window
+super + shift + q
+    bspc node -c
+
+# focus on window
+super + {h, j, k, l}
+    bspc node -f {west, south, north, east}
+
+# resize window
+super + shift + {h,j,k,l}
+    n=10; \
+    { d1=left;   d2=right;  dx=-$n; dy=0;   \
+    , d1=bottom; d2=top;    dx=0;   dy=$n;  \
+    , d1=top;    d2=bottom; dx=0;   dy=-$n; \
+    , d1=right;  d2=left;   dx=$n;  dy=0;   \
+    } \
+    bspc node --resize $d1 $dx $dy || bspc node --resize $d2 $dx $dy
+
+# preselect window location
+super + ctrl + {h, j, k, l}
+    bspc node -p {west, south, north, east}
+
+# cancel preselect
+super + Escape
+    bspc node -p cancel
+
+# send window to desktop
+super + shift + {0-9}
+    bspc node -d {0-9}
+
+# switch to desktop
+super + {0-9}
+    bspc desktop -f {0-9}
+
+# change window mode
+super + {t, s, f}
+	bspc node -t {tiled, floating, fullscreen}
+
+############
+# Programs #
+############
+super + Return
+    $TERMINAL
+
+super + w
+    $BROWSER
+
+super + space
+    rofi -show drun
+
+super + shift + space
+    rofi -show run

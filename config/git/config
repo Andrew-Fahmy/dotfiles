@@ -2,6 +2,6 @@
 	name = Andrew Fahmy
 	email = andrewj.fahmy@gmail.com
 [core]
-	excludefile = ~/.gitignore
+	excludefile = ~/.config/git/ignore
 [pull]
 	rebase = false
