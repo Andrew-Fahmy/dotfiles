@@ -3,7 +3,6 @@
 ppgrep -x sxhkd > /dev/null || sxhkd &
 picom &
 feh --bg-fill ~/images/wallpaper/lagoon_nebula.jpg &
-alacritty &
 
 bspc rule -r "*"
 

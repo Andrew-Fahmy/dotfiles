@@ -33,7 +33,7 @@ set cmdheight=2
 
 set noswapfile
 set nobackup
-set undodir=~/.config/.nvim/undodir
+set undodir=~/.cache/nvim/undodir
 set undofile
 
 
@@ -44,6 +44,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'baskerville/vim-sxhkdrc',
 Plug 'tpope/vim-fugitive'
 
 Plug 'joshdick/onedark.vim'
@@ -68,6 +69,7 @@ let g:netrw_browse_split=0
 let g:netrw_banner=0
 let g:netrw_winsize=15
 let g:netrw_liststyle=3
+let g:netrw_dirhistmax=0
 
 nnoremap Y y$
 

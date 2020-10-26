@@ -10,3 +10,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export LESSHISTFILE="-"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+
+export PATH="$PATH:~/.local/bin"
