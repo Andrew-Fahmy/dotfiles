@@ -72,6 +72,8 @@ alias gcam='git commit -am'
 
 alias vim=nvim
 
+export PATH=~/.npm-global/bin:$PATH
+export R_LIBS_USER=~/.R_lib/
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2> /dev/null
