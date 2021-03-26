@@ -10,6 +10,8 @@ set noshowmode
 set wildmenu
 set hidden
 
+set spell
+
 set scrolloff=7
 set number
 set relativenumber
@@ -24,10 +26,11 @@ set expandtab
 set smartindent
 
 set incsearch
+set smartcase
 set nohlsearch
 
 set list
-set listchars=tab:->,trail:·
+set listchars=trail:·
 
 set updatetime=50
 
@@ -78,7 +81,6 @@ lua require'lspconfig'.clangd.setup{}
 
 luafile ~/.config/nvim/lua/compe-config.lua
 
-
 let mapleader=' '
 let g:netrw_browse_split=0
 let g:netrw_banner=0
@@ -103,7 +105,7 @@ nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-space> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <C-Space> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
