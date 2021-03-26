@@ -13,3 +13,6 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 
 export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:~/.npm-global/bin"
+
+export R_LIBS_USER=~/.R_lib/
