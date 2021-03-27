@@ -91,14 +91,12 @@ let g:netrw_dirhistmax=0
 
 nnoremap Y y$
 
-nnoremap <C-h> :wincmd h<CR>
-nnoremap <C-j> :wincmd j<CR>
-nnoremap <C-k> :wincmd k<CR>
-nnoremap <C-l> :wincmd l<CR>
+nnoremap <C-j> :cnext<CR>
+nnoremap <C-k> :cprev<CR>
 
 nnoremap <leader>b :Lexplore<CR>
 
-nnoremap <leader>g :G<CR>
+nnoremap <leader>ga :G<CR>
 
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>

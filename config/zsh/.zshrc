@@ -8,29 +8,49 @@ compinit
 
 HISTFILE=$XDG_CACHE_HOME/zsh/.histfile
 HISTSIZE=10000
-SAVEHIST=1000
-
-bindkey -v
-export KEYTIMEOUT=1
+SAVEHIST=10000
 
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-
-autoload -Uz vcs_info
-precmd() {
-    vcs_info
-}
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '!'
 zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git:*' formats ' (%b%u%c)'
+
+autoload -Uz vcs_info
+autoload -Uz edit-command-line;
+
+
+function zle-keymap-select {
+    if [[ ${KEYMAP} == vicmd ]]; then
+        echo -ne '\e[2 q'
+    else
+        echo -ne '\e[6 q'
+    fi
+}
+
+
+zle -N edit-command-line
+zle -N zle-keymap-select
+
+bindkey -v
+bindkey '^e' edit-command-line
+export KEYTIMEOUT=1
+
+
+_fix_cursor() {
+    echo -ne '\e[6 q'
+}
+_vcs_info() {
+    vcs_info
+}
+
+precmd_functions+=(_fix_cursor)
+precmd_functions+=(_vcs_info)
 
 
 setopt prompt_subst
@@ -62,11 +82,13 @@ alias gs='git status'
 alias gl='git log --oneline --graph'
 alias gpull='git pull'
 alias gpush='git push'
+
 alias gb='git branch'
+alias gco='git checkout'
+
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
-alias gco='git checkout'
 
 alias vim=nvim
 
