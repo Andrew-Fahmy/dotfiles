@@ -25,6 +25,7 @@ autoload -Uz vcs_info
 autoload -Uz edit-command-line;
 
 
+
 function zle-keymap-select {
     if [[ ${KEYMAP} == vicmd ]]; then
         echo -ne '\e[2 q'
@@ -92,6 +93,9 @@ alias gcam='git commit -am'
 
 alias vim=nvim
 
+typeset -U path
+path+=$HOME/.local/bin
+path+=$HOME/.npm-global/bin
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2> /dev/null
