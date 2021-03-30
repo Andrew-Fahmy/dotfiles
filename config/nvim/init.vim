@@ -50,6 +50,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 
 Plug 'vim-airline/vim-airline'
@@ -80,6 +81,7 @@ lua require'lspconfig'.clangd.setup{}
 
 
 luafile ~/.config/nvim/lua/compe-config.lua
+luafile ~/.config/nvim/lua/telescope-config.lua
 
 let mapleader=' '
 let g:netrw_browse_split=0
