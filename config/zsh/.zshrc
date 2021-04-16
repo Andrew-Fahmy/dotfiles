@@ -19,7 +19,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '!'
 zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:git:*' formats ' (%b%u%c)'
+zstyle ':vcs_info:git:*' formats '(%b%u%c)'
 
 autoload -Uz vcs_info
 autoload -Uz edit-command-line;
@@ -54,12 +54,15 @@ precmd_functions+=(_fix_cursor)
 precmd_functions+=(_vcs_info)
 
 
+
 setopt prompt_subst
 PROMPT='%B'
-PROMPT+='%F{blue} %2~'
-PROMPT+='%F{yellow}${vcs_info_msg_0_}'
-PROMPT+='%F{red} ▶ '
+PROMPT+='%K{blue}%F{black} %2~ '
+PROMPT+='%K{red}%F{blue}'
+PROMPT+='%K{red}%F{black} ${vcs_info_msg_0_}%k'
+PROMPT+='%F{red} '
 PROMPT+='%b%f'
+
 
 RPROMPT=''
 RPROMPT+='%*'
@@ -92,6 +95,15 @@ alias gcm='git commit -m'
 alias gcam='git commit -am'
 
 alias vim=nvim
+
+
+export TERMINAL="alacritty"
+export BROWSER="firefox"
+export PAGER="less"
+export LESSHISTFILE="-"
+export MANPAGER="nvim +Man!"
+export EDITOR="nvim"
+
 
 typeset -U path
 path+=$HOME/.local/bin
