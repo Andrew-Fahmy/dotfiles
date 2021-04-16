@@ -1,4 +1,4 @@
-require('telescope').setup{
+require('telescope').setup {
     defaults = {
         vimgrep_arguments = {
             'rg',
@@ -26,7 +26,7 @@ require('telescope').setup{
             },
         },
         file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-        file_ignore_patterns = {},
+        file_ignore_patterns = { "node_modules/*", ".git/*" },
         generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
         shorten_path = true,
         winblend = 0,
@@ -51,6 +51,11 @@ require('telescope').setup{
             override_generic_sorter = false,
             override_file_sorter = true,
         }
+    },
+    find_command = {
+        'rg',
+        '--hidden',
+        '--files'
     }
 }
 
