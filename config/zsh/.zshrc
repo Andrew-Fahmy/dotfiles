@@ -18,8 +18,8 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '!'
-zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:git:*' formats '(%b%u%c)'
+zstyle ':vcs_info:*' stagedstr '*'
+zstyle ':vcs_info:git:*' formats '(%b%u%c) '
 
 autoload -Uz vcs_info
 autoload -Uz edit-command-line;
@@ -54,13 +54,12 @@ precmd_functions+=(_fix_cursor)
 precmd_functions+=(_vcs_info)
 
 
-
 setopt prompt_subst
 PROMPT='%B'
-PROMPT+='%K{blue}%F{black} %2~ '
-PROMPT+='%K{red}%F{blue}'
-PROMPT+='%K{red}%F{black} ${vcs_info_msg_0_}%k'
-PROMPT+='%F{red} '
+PROMPT+='%F{blue} %2~ '
+PROMPT+='%F{red}${vcs_info_msg_0_}'
+PROMPT+='%F{white} '
+
 PROMPT+='%b%f'
 
 
@@ -74,6 +73,7 @@ alias ll='ls -lA --color=auto'
 alias ..='cd ..'
 
 alias grep='grep --color=auto'
+alias diff='diff --color=auto'
 
 alias mv='mv -i'
 alias rm='rm -i'
