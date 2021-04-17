@@ -10,8 +10,6 @@ set noshowmode
 set wildmenu
 set hidden
 
-set spell
-
 set scrolloff=7
 set number
 set relativenumber
@@ -72,11 +70,11 @@ Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 
-"set background=dark
-"colorscheme onedark
+set background=dark
+colorscheme onedark
 
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+"let g:gruvbox_contrast_dark='hard'
+"colorscheme gruvbox
 
 
 
