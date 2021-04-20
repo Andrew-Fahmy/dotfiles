@@ -64,6 +64,8 @@ Plug 'hoob3rt/lualine.nvim'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'skywind3000/asyncrun.vim'
+
 Plug 'joshdick/onedark.vim'
 Plug 'gruvbox-community/gruvbox'
 
@@ -129,7 +131,9 @@ nnoremap <C-k> <cmd>cprev<CR>
 
 nnoremap <leader>b <cmd>NvimTreeToggle<CR>
 
-nnoremap <leader>ga <cmd>G<CR>
+nnoremap <leader>gs <cmd>Git<CR>
+nnoremap <leader>gf <cmd>diffget //2<CR>
+nnoremap <leader>gj <cmd>diffget //3<CR>
 
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
