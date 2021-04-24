@@ -40,6 +40,7 @@ zle -N zle-keymap-select
 
 bindkey -v
 bindkey '^e' edit-command-line
+bindkey -v '^?' backward-delete-char
 export KEYTIMEOUT=1
 
 
@@ -71,6 +72,10 @@ alias ls='ls -F --color=auto'
 alias la='ls -A --color=auto'
 alias ll='ls -lA --color=auto'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias .......='cd ../../../../..'
 
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
