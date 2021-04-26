@@ -53,31 +53,36 @@ Plug 'hrsh7th/vim-vsnip-integ'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
-"Plug 'vim-airline/vim-airline'
 Plug 'hoob3rt/lualine.nvim'
 
 Plug 'tpope/vim-fugitive'
+"Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'skywind3000/asyncrun.vim'
 
 Plug 'joshdick/onedark.vim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'folke/tokyonight.nvim'
 
 call plug#end()
 
 
-set background=dark
-colorscheme onedark
+"set background=dark
+"colorscheme onedark
 
 "let g:gruvbox_contrast_dark='hard'
 "colorscheme gruvbox
 
+colorscheme tokyonight
 
 
 lua require'lspconfig'.tsserver.setup{}
@@ -91,6 +96,7 @@ lua require'lspconfig'.clangd.setup{}
 luafile ~/.config/nvim/lua/compe-config.lua
 luafile ~/.config/nvim/lua/telescope-config.lua
 luafile ~/.config/nvim/lua/lualine-config.lua
+luafile ~/.config/nvim/lua/treesitter-config.lua
 
 
 let g:nvim_tree_icons = {
