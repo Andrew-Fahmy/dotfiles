@@ -59,7 +59,7 @@ setopt prompt_subst
 PROMPT='%B'
 PROMPT+='%F{blue} %2~ '
 PROMPT+='%F{red}${vcs_info_msg_0_}'
-PROMPT+='%F{white} '
+PROMPT+='%F{white}$ '
 
 PROMPT+='%b%f'
 
@@ -87,6 +87,7 @@ alias yeet='rm -rf'
 alias please='sudo $(fc -ln -1)'
 
 alias gs='git status'
+alias gd='git diff'
 
 alias gl='git log --oneline --graph'
 alias gpull='git pull'
@@ -94,12 +95,20 @@ alias gpush='git push'
 
 alias gb='git branch'
 alias gco='git checkout'
+alias gcb=git-change-branch
 
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 
 alias vim=nvim
+
+
+function git-change-branch {
+    if git rev-parse; then
+        git branch -a | fzf --height 50% --reverse | xargs git checkout
+    fi
+}
 
 
 export TERMINAL="alacritty"
