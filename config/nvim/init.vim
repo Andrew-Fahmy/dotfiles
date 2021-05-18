@@ -99,6 +99,7 @@ luafile ~/.config/nvim/lua/lualine-config.lua
 luafile ~/.config/nvim/lua/treesitter-config.lua
 
 
+let g:nvim_tree_indent_markers = 1
 let g:nvim_tree_icons = {
     \ 'default': '',
     \ 'symlink': '',
@@ -120,6 +121,7 @@ let g:nvim_tree_icons = {
     \   'symlink_open': "",
     \   }
     \ }
+
 
 let mapleader=' '
 
