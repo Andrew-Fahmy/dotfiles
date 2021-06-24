@@ -15,6 +15,7 @@ set number
 set relativenumber
 set nowrap
 
+set textwidth=80
 set colorcolumn=80
 
 set tabstop=4
@@ -134,6 +135,12 @@ let mapleader=' '
 
 nnoremap Y y$
 
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
 nnoremap <C-j> <cmd>cnext<CR>
 nnoremap <C-k> <cmd>cprev<CR>
 
@@ -155,6 +162,7 @@ inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 
+nnoremap <leader><C-m> <cmd>Telescope git_files<cr>
 nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
