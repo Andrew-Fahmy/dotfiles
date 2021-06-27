@@ -47,9 +47,11 @@ require('telescope').setup {
         buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
     },
     extensions = {
-        fzy_native = {
+        fzf = {
+            fuzzy = true,
             override_generic_sorter = false,
             override_file_sorter = true,
+            case_mode = "smart_case"
         }
     },
     find_command = {
@@ -59,4 +61,4 @@ require('telescope').setup {
     }
 }
 
-require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('fzf')
