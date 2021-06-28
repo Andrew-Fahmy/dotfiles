@@ -101,7 +101,7 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 
-alias vim=nvim
+alias vim='nvim'
 
 
 function git-change-branch {
