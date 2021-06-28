@@ -103,6 +103,8 @@ alias gcam='git commit -am'
 
 alias vim='nvim'
 
+alias t='tmux a || exec $XDG_CONFIG_HOME/tmux/default.sh'
+
 
 function git-change-branch {
     if git rev-parse; then
