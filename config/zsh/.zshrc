@@ -19,7 +19,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '!'
 zstyle ':vcs_info:*' stagedstr '*'
-zstyle ':vcs_info:git:*' formats '(%b%u%c) '
+zstyle ':vcs_info:git:*' formats '%F{white}on %F{red}%b (%u%c) '
 
 autoload -Uz vcs_info
 autoload -Uz edit-command-line;
@@ -58,7 +58,7 @@ precmd_functions+=(_vcs_info)
 setopt prompt_subst
 PROMPT='%B'
 PROMPT+='%F{blue} %2~ '
-PROMPT+='%F{red}${vcs_info_msg_0_}'
+PROMPT+='${vcs_info_msg_0_}'
 PROMPT+='%F{white}$ '
 
 PROMPT+='%b%f'
