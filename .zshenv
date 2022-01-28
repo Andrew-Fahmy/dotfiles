@@ -7,3 +7,9 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export R_LIBS_USER=~/.R_lib/
 
 
+export TERMINAL="alacritty"
+export BROWSER="firefox"
+export PAGER="less"
+export LESSHISTFILE="-"
+export MANPAGER="nvim +Man!"
+export EDITOR="nvim"

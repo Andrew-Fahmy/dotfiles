@@ -59,7 +59,7 @@ setopt prompt_subst
 PROMPT='%B'
 PROMPT+='%F{blue} %2~ '
 PROMPT+='${vcs_info_msg_0_}'
-PROMPT+='%F{white}$ '
+PROMPT+='%F{white}%# '
 
 PROMPT+='%b%f'
 
@@ -111,14 +111,6 @@ function git-change-branch {
         git branch -a | fzf --height 50% --reverse | xargs git checkout
     fi
 }
-
-
-export TERMINAL="alacritty"
-export BROWSER="firefox"
-export PAGER="less"
-export LESSHISTFILE="-"
-export MANPAGER="nvim +Man!"
-export EDITOR="nvim"
 
 
 typeset -U path
