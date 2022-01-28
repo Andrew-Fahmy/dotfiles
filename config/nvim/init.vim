@@ -36,7 +36,7 @@ set smartindent
 set incsearch
 set ignorecase
 set smartcase
-set nohlsearch
+"set nohlsearch
 
 " show whitespace characters
 set list
@@ -60,7 +60,11 @@ call plug#begin(stdpath('cache') . '/plugged')
 
     " LSP
     Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-vsnip'
 
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/vim-vsnip-integ'
@@ -73,12 +77,14 @@ call plug#begin(stdpath('cache') . '/plugged')
     Plug 'nvim-lua/plenary.nvim'
 
 
-    " file tree
+    " icons
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'kyazdani42/nvim-tree.lua'
 
     " status line
-    Plug 'hoob3rt/lualine.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
+
+    " line indent marker
+    Plug 'lukas-reineke/indent-blankline.nvim'
 
     " git tools
     Plug 'tpope/vim-fugitive'
@@ -116,34 +122,10 @@ lua require'lspconfig'.clangd.setup{}
 
 
 " plugin config
-luafile ~/.config/nvim/lua/compe-config.lua
+luafile ~/.config/nvim/lua/cmp-config.lua
 luafile ~/.config/nvim/lua/telescope-config.lua
 luafile ~/.config/nvim/lua/lualine-config.lua
 luafile ~/.config/nvim/lua/treesitter-config.lua
-
-
-let g:nvim_tree_indent_markers = 1
-let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
-    \ }
 
 
 let mapleader=' '
@@ -154,9 +136,6 @@ let mapleader=' '
 "let g:netrw_liststyle=3
 "let g:netrw_dirhistmax=0
 
-
-" make Y act move like D and C
-nnoremap Y                  y$
 
 " copy and paste from system clipboard
 nnoremap <leader>y          "+y
@@ -170,12 +149,10 @@ nnoremap <C-j>              <cmd>cnext<CR>
 nnoremap <C-k>              <cmd>cprev<CR>
 
 " file tree bind
-nnoremap <leader>b          <cmd>NvimTreeToggle<CR>
+nnoremap <leader>b          <cmd>Telescope file_browser<CR>
 
 " git binds
 nnoremap <leader>gs         <cmd>Git<CR>
-nnoremap <leader>gf         <cmd>diffget //2<CR>
-nnoremap <leader>gj         <cmd>diffget //3<CR>
 
 " LSP binds
 nnoremap <silent> gd        <cmd>lua vim.lsp.buf.definition()<CR>
@@ -185,13 +162,9 @@ nnoremap <silent> gr        <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> K         <cmd>lua vim.lsp.buf.hover()<CR>
 "nnoremap <silent> <C-Space> <cmd>lua vim.lsp.buf.signature_help()<CR>
 
-" completion binds
-inoremap <silent><expr>     <C-Space> compe#complete()
-inoremap <silent><expr>     <CR>      compe#confirm('<CR>')
-inoremap <silent><expr>     <C-e>     compe#close('<C-e>')
 
 " fuzzy finder binds
-nnoremap <leader><C-m>      <cmd>Telescope git_files<cr>
+nnoremap <leader><CR>       <cmd>Telescope git_files<cr>
 nnoremap <leader>ff         <cmd>Telescope find_files find_command=rg,--hidden,--files<cr>
 nnoremap <leader>fg         <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb         <cmd>Telescope buffers<cr>
