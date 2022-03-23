@@ -3,8 +3,9 @@ neofetch
 autoload -Uz compinit
 zmodload zsh/complist
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+setopt nocaseglob
 compinit
-
 
 HISTFILE=$XDG_CACHE_HOME/zsh/.histfile
 HISTSIZE=10000
