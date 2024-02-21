@@ -4,8 +4,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-export R_LIBS_USER=~/.R_lib/
-
 
 export TERMINAL="alacritty"
 export BROWSER="firefox"

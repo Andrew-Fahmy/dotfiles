@@ -103,8 +103,10 @@ alias gcm='git commit -m'
 alias gcam='git commit -am'
 
 alias vim='nvim'
+alias xclip='xclip -sel clip'
 
 alias t='$XDG_CONFIG_HOME/tmux/default.sh'
+alias install='dnf list | fzf -m | awk "{print $1}"'
 
 
 function git-change-branch {
@@ -118,7 +120,9 @@ typeset -U path
 path+=$HOME/.local/bin
 path+=$HOME/.npm-global/bin
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2> /dev/null
-source /usr/share/fzf/key-bindings.zsh 2> /dev/null
-source /usr/share/fzf/completion.zsh 2> /dev/null
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  2> /dev/null
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2> /dev/null
+source /usr/share/fzf/shell/key-bindings.zsh 2> /dev/null
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
