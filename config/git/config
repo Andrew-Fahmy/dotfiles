@@ -3,10 +3,9 @@
 	email = andrewj.fahmy@gmail.com
 [core]
 	excludefile = ~/.config/git/ignore
-[pull]
-	rebase = false
+	autocrlf = input
 [push]
 	autoSetupRemote = true
 
-[includeIf "gitdir/i:vas/"]
+[includeIf "gitdir:~/Vas/"]
 	path = ./config-work
