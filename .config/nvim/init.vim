@@ -66,6 +66,7 @@ call plug#begin(stdpath('cache') . '/plugged')
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-vsnip'
+    Plug 'hrsh7th/cmp-emoji'
 
     Plug 'ErichDonGubler/lsp_lines.nvim'
 
@@ -128,7 +129,7 @@ lua require('lspconfig').csharp_ls.setup{}
 " lua require('lspconfig').r_language_server.setup{}
 " lua require('lspconfig').bashls.setup{}
 " lua require('lspconfig').html.setup{}
-" lua require('lspconfig').pyright.setup{}
+lua require('lspconfig').pyright.setup{}
 " lua require('lspconfig').clangd.setup{}
 
 " set up gitsigns
