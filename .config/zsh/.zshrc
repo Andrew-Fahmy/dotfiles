@@ -1,4 +1,4 @@
-neofetch
+fastfetch
 
 autoload -Uz compinit
 zmodload zsh/complist
