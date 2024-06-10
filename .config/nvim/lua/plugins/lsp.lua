@@ -28,7 +28,8 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "tsserver",
-        "csharp_ls@0.10.0",
+        "tailwindcss",
+        --"csharp_ls@0.10.0",
         "bashls",
         "pyright",
         "clangd",
