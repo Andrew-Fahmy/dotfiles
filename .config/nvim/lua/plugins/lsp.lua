@@ -27,7 +27,7 @@ return {
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "tsserver",
+        "ts_ls",
         "tailwindcss",
         --"csharp_ls@0.10.0",
         "bashls",
@@ -35,6 +35,7 @@ return {
         "clangd",
         "lua_ls",
         "html",
+        -- "prismals"
       },
       handlers = {
         function(server_name)
