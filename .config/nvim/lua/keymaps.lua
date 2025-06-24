@@ -6,6 +6,8 @@ vim.keymap.set('n', '<C-j>', '<Cmd>cnext<CR>')
 vim.keymap.set('n', '<C-k>', '<Cmd>cprev<CR>')
 
 -- copy and paste from system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+d')
+vim.keymap.set({ 'n', 'v' }, '<leader>D', '"+D')
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y')
 vim.keymap.set({ 'n', 'v' }, '<leader>Y', '"+Y')
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p')

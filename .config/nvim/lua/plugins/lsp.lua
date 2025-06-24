@@ -1,8 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    { "mason-org/mason.nvim", branch = 'v1.x' },
+    { "mason-org/mason-lspconfig.nvim", branch = 'v1.x' },
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
@@ -22,7 +22,7 @@ return {
       vim.lsp.protocol.make_client_capabilities(),
       cmp_lsp.default_capabilities()
     )
-
+    --
     require("fidget").setup()
     require("mason").setup()
     require("mason-lspconfig").setup({

@@ -12,6 +12,7 @@ return {
         "c",
         "lua",
         "bash",
+        "go",
       },
       auto_install = true,
       sync_install = false,

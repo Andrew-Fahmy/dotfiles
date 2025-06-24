@@ -3,23 +3,16 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        section_separators = { "", "" },
-        component_separators = { "┃", "┃" },
+        --section_separators = { "", "" },
+        --component_separators = { "┃--", "--┃" },
         --section_separators = {'', ''},
         --component_separators = {'', ''},
-        theme = "tokyonight",
+        --theme = "tokyonight",
       },
       sections = {
         lualine_a = { "mode" },
         lualine_b = {
           "branch",
-          fmt = function(display_string, context)
-            if #display_string > 20 then
-              return display_string:sub(1, 20) .. '...'
-            else
-              return display_string
-            end
-          end,
         },
         --lualine_b = {{ 'branch', icon = '' }},
         lualine_c = {
