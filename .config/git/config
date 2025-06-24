@@ -1,9 +1,12 @@
 [user]
 	name = Andrew Fahmy
 	email = andrewj.fahmy@gmail.com
+
 [core]
 	excludefile = ~/.config/git/ignore
 	autocrlf = input
+  hooksPath = ~/.config/git/hooks/
+
 [push]
 	autoSetupRemote = true
 

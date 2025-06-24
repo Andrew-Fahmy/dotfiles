@@ -1,0 +1,39 @@
+#!/bin/bash
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+
+# Skip if it's a merge or rebase commit
+if [ "$COMMIT_SOURCE" = "merge" ]; then
+  exit 0
+fi
+
+# Get staged diff
+DIFF=$(git diff --cached --unified=1)
+if [ -z "$DIFF" ]; then
+  echo "No staged changes. Skipping LLM."
+  exit 0
+fi
+
+# Multiline prompt
+PROMPT=$(cat << EOM
+Here is the full Git diff:
+$DIFF
+
+You are an expert software developer. Analyze the following git diff and generate a concise but detailed commit message.
+
+Guidelines:
+- Use imperative voice (e.g., "fix", "add", "update")
+- Summarize the intent and effect of the changes
+- Limit to a single line
+- Include some emojis and use fun language
+- Do NOT mention file names or line numbers
+- Do NOT include any comments, only the commit message in your response
+EOM
+)
+
+# Call local LLM via Ollama
+MESSAGE=$(echo "$PROMPT" | ollama run llama3.1)
+
+# Trim and write to commit message file
+echo "$MESSAGE" > "$COMMIT_MSG_FILE"
