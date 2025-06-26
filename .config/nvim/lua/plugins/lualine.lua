@@ -2,13 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   config = function()
     require("lualine").setup({
-      options = {
-        --section_separators = { "", "" },
-        --component_separators = { "┃--", "--┃" },
-        --section_separators = {'', ''},
-        --component_separators = {'', ''},
-        --theme = "tokyonight",
-      },
       sections = {
         lualine_a = { "mode" },
         lualine_b = {
