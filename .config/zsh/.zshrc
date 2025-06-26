@@ -115,14 +115,15 @@ function git-change-branch {
     fi
 }
 
-
 typeset -U path
 path+=$HOME/.local/bin
 path+=$HOME/.npm-global/bin
+path+=${XDG_DATA_HOME}/pnpm
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  2> /dev/null
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2> /dev/null
 source /usr/share/fzf/shell/key-bindings.zsh 2> /dev/null
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+source ${XDG_CONFIG_HOME}/zsh/secrets.zsh

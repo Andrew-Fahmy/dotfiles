@@ -4,6 +4,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
+export NVM_DIR="$XDG_CONFIG_HOME/nvm"
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 
 export TERMINAL="alacritty"
 export BROWSER="firefox"
