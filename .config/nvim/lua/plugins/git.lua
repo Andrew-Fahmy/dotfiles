@@ -1,5 +1,5 @@
 return {
-  { "tpope/vim-fugitive" },
+  -- { "tpope/vim-fugitive" },
   {
     "NeogitOrg/neogit",
     tag = "v0.0.1",

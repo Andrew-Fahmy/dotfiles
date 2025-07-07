@@ -7,7 +7,6 @@ return {
         lualine_b = {
           "branch",
         },
-        --lualine_b = {{ 'branch', icon = '' }},
         lualine_c = {
           {
             "filename",
@@ -17,9 +16,6 @@ return {
         lualine_x = { "filetype" },
         lualine_y = { "encoding", { "fileformat", icons_enabled = false } },
         lualine_z = { "location", "progress" },
-      },
-      extensions = {
-        "fugitive",
       },
     })
   end,

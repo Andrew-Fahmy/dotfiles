@@ -1,28 +1,27 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    { "mason-org/mason.nvim", branch = 'v1.x' },
-    { "mason-org/mason-lspconfig.nvim", branch = 'v1.x' },
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-emoji",
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
+    { "mason-org/mason.nvim" },
+    { "mason-org/mason-lspconfig.nvim" },
+    {
+      'saghen/blink.cmp',
+      dependencies = { 'rafamadriz/friendly-snippets' },
+      version = '1.*',
+      opts = {
+        keymap = {
+          preset = 'default',
+          -- ['<CR>'] = { 'select_and_accept' },
+        },
+        sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+        fuzzy = { implementation = "prefer_rust_with_warning" }
+      },
+    },
     "j-hui/fidget.nvim",
   },
 
   config = function()
-    local cmp = require("cmp")
-    local cmp_lsp = require("cmp_nvim_lsp")
-    local capabilities = vim.tbl_deep_extend(
-      "force",
-      {},
-      vim.lsp.protocol.make_client_capabilities(),
-      cmp_lsp.default_capabilities()
-    )
-    --
+    local capabilities = require('blink.cmp').get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
+
     require("fidget").setup()
     require("mason").setup()
     require("mason-lspconfig").setup({
@@ -35,7 +34,7 @@ return {
         "clangd",
         "lua_ls",
         "html",
-        -- "prismals"
+        "prismals"
       },
       handlers = {
         function(server_name)
@@ -44,34 +43,6 @@ return {
           })
         end,
       },
-    })
-
-    local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
-    cmp.setup({
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-        end,
-      },
-      mapping = {
-        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-        ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-        ["<C-e>"] = cmp.mapping({
-          i = cmp.mapping.abort(),
-          c = cmp.mapping.close(),
-        }),
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-      },
-      sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "luasnip" }, -- For luasnip users.
-        { name = "emoji" },
-        }, {
-          { name = "path" },
-          { name = "buffer" },
-      }),
     })
 
     vim.diagnostic.config({
@@ -92,9 +63,9 @@ return {
         vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
         vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-        vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+        vim.keymap.set("n", "<leader>vs", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-        vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+        vim.keymap.set("n", "<leader>va", function() vim.lsp.buf.code_action() end, opts)
         vim.keymap.set("n", "<leader>r", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
