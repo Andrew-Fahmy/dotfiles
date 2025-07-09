@@ -7,3 +7,9 @@ vim.api.nvim_create_user_command("Dark", function()
   vim.o.background = "dark"
   print("Set background to dark")
 end, {})
+
+vim.api.nvim_create_user_command("Colorscheme", function()
+    Snacks.picker.colorschemes()
+end, {})
+
+
