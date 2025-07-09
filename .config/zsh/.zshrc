@@ -126,4 +126,4 @@ source /usr/share/fzf/shell/key-bindings.zsh 2> /dev/null
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-source ${XDG_CONFIG_HOME}/zsh/secrets.zsh
+source ${XDG_CONFIG_HOME}/zsh/secrets.zsh 2> /dev/null

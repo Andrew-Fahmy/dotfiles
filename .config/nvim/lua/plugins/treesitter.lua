@@ -15,6 +15,7 @@ return {
         "bash",
         "go",
         "python",
+        "regex",
       },
       auto_install = true,
       sync_install = false,

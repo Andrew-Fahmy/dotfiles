@@ -20,7 +20,8 @@ return {
       ensure_installed = {
         "ts_ls",
         "tailwindcss",
-        --"csharp_ls@0.10.0",
+        "omnisharp",
+        -- "csharp_ls@0.10.0",
         "bashls",
         "pyright",
         "clangd",
@@ -36,6 +37,12 @@ return {
         end,
       },
     })
+
+    local pid = vim.fn.getpid()
+    local omnisharp_bin = "/home/andrew/.local/share/nvim/mason/bin/OmniSharp"
+    require'lspconfig'.omnisharp.setup{
+      cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
+    }
 
     vim.diagnostic.config({
       float = {
