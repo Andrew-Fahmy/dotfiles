@@ -27,6 +27,7 @@ history = 10000
 program = "/bin/zsh"
 
 [window]
+decorations = "None"
 opacity = 0.9
 
 [general]

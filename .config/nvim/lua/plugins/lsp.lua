@@ -7,6 +7,9 @@ return {
       'saghen/blink.cmp',
       dependencies = { 'rafamadriz/friendly-snippets' },
       version = '1.*',
+      opts = {
+        keymap = { preset = 'default' },
+      }
     },
     "j-hui/fidget.nvim",
   },
@@ -40,9 +43,9 @@ return {
 
     local pid = vim.fn.getpid()
     local omnisharp_bin = "/home/andrew/.local/share/nvim/mason/bin/OmniSharp"
-    require'lspconfig'.omnisharp.setup{
+    require("lspconfig").omnisharp.setup({
       cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
-    }
+    })
 
     vim.diagnostic.config({
       float = {
