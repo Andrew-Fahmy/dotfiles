@@ -1,12 +1,6 @@
 return {
   { "joshdick/onedark.vim" },
-  { "gruvbox-community/gruvbox" },
+  { "ellisonleao/gruvbox.nvim", config = true },
   { "catppuccin/nvim", name = "catppuccin" },
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    config = function()
-      vim.cmd.colorscheme("tokyonight")
-    end,
-  },
+  { "folke/tokyonight.nvim", lazy = false, },
 }

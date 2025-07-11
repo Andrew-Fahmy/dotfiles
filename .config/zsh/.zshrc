@@ -35,13 +35,20 @@ function zle-keymap-select {
     fi
 }
 
+function paste_from_clipboard() {
+    PASTE=$(xclip -selection clipboard -o)
+    LBUFFER=$LBUFFER${RBUFFER:1:1}$PASTE
+    RBUFFER=${RBUFFER:1:${#RBUFFER}}
+}
 
+zle -N paste_from_clipboard
 zle -N edit-command-line
 zle -N zle-keymap-select
 
 bindkey -v
 bindkey '^e' edit-command-line
-bindkey -v '^?' backward-delete-char
+bindkey '^?' backward-delete-char
+bindkey -M vicmd "p" paste_from_clipboard
 export KEYTIMEOUT=1
 
 
@@ -91,16 +98,12 @@ alias gs='git status'
 alias gd='git diff'
 
 alias gl='git log --oneline --graph'
-alias gpull='git pull'
-alias gpush='git push'
 
 alias gb='git branch'
 alias gco='git checkout'
 alias gcb=git-change-branch
 
 alias gc='git commit'
-alias gcm='git commit -m'
-alias gcam='git commit -am'
 
 alias vim='nvim'
 alias xclip='xclip -sel clip'

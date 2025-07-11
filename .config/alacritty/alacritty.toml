@@ -1,24 +1,12 @@
 [cursor]
 style = "Block"
 
-[font.bold]
-family = "JetBrainsMono NL"
-style = "Bold"
-
-[font.bold_italic]
-family = "JetBrainsMono NL"
-style = "Bold Italic"
-
-[font.italic]
-family = "JetBrainsMono NL"
-style = "Italic"
-
 [font.normal]
 family = "JetBrainsMono NL"
-style = "Regular"
 
 [font]
 size = 12.0
+offset = { x = 0, y = 1 }
 
 [scrolling]
 history = 10000
