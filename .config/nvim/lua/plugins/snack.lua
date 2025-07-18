@@ -37,11 +37,11 @@ return {
     -- git
     { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
     -- Grep
-    { "<leader>fg", function() Snacks.picker.grep() end, desc = "Grep" },
-    { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
-    { "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
-    { "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
-    { "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
+    { "<leader>fg", function() Snacks.picker.grep({hidden = true}) end, desc = "Grep" },
+    { "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
+    { "<leader>fh", function() Snacks.picker.help() end, desc = "Help Pages" },
+    { "<leader>fm", function() Snacks.picker.marks() end, desc = "Marks" },
+    { "<leader>fq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
     -- LSP
     { "gd", function() Snacks.picker.lsp_definitions() end, desc = "Goto Definition" },
     { "gD", function() Snacks.picker.lsp_declarations() end, desc = "Goto Declaration" },
