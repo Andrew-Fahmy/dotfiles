@@ -5,14 +5,18 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = {
-          "branch",
-        },
-        lualine_c = {
           {
-            "filename",
-            path = 1,
-          },
+            "branch",
+            fmt = function (str)
+              if str:len() > 15 then
+                return str:sub(1, 15) .. '...'
+              else
+                return str
+              end
+            end
+          }
         },
+        lualine_c = { { "filename", path=1 } },
         lualine_x = { "filetype" },
         lualine_y = { "encoding", { "fileformat", icons_enabled = false } },
         lualine_z = { "location", "progress" },
