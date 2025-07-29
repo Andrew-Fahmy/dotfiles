@@ -3,8 +3,8 @@
 COMMIT_MSG_FILE=$1
 COMMIT_SOURCE=$2
 
-# Skip if it's a merge or rebase commit
-if [ "$COMMIT_SOURCE" = "merge" ]; then
+# Skip if not a normal commit (merge, rebase, squash, or amend)
+if [ -n "$COMMIT_SOURCE" ]; then
   exit 0
 fi
 
