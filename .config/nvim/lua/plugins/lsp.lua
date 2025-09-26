@@ -15,13 +15,12 @@ return {
   },
 
   config = function()
-    local capabilities = require('blink.cmp').get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
-
     require("fidget").setup()
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
-        "ts_ls",
+        "vtsls",
+        -- "ts_ls",
         "tailwindcss",
         "omnisharp",
         -- "csharp_ls@0.10.0",
@@ -32,19 +31,12 @@ return {
         "html",
         "prismals"
       },
-      handlers = {
-        function(server_name)
-          require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
-          })
-        end,
-      },
     })
 
     local pid = vim.fn.getpid()
     local omnisharp_bin = "/home/andrew/.local/share/nvim/mason/bin/OmniSharp"
-    require("lspconfig").omnisharp.setup({
+    vim.lsp.config["omnisharp"] = {
       cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
-    })
+    }
   end,
 }
