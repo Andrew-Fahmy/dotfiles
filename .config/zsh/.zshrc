@@ -71,7 +71,6 @@ PROMPT+='%F{white}%# '
 
 PROMPT+='%b%f'
 
-
 RPROMPT=''
 RPROMPT+='%*'
 
@@ -82,8 +81,6 @@ alias ll='ls -lA --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias .......='cd ../../../../..'
 
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
@@ -101,22 +98,11 @@ alias gl='git log --oneline --graph'
 
 alias gb='git branch'
 alias gco='git checkout'
-alias gcb=git-change-branch
 
-alias gc='git commit'
-
-alias vim='nvim'
 alias xclip='xclip -sel clip'
 
 alias t='$XDG_CONFIG_HOME/tmux/default.sh'
-alias install='dnf list | fzf -m | awk "{print $1}"'
 
-
-function git-change-branch {
-    if git rev-parse; then
-        git branch -a | fzf --height 50% --reverse | xargs git checkout
-    fi
-}
 
 typeset -U path
 path+=$HOME/.local/bin
@@ -126,7 +112,5 @@ path+=${XDG_DATA_HOME}/pnpm
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  2> /dev/null
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2> /dev/null
 source /usr/share/fzf/shell/key-bindings.zsh 2> /dev/null
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 source ${XDG_CONFIG_HOME}/zsh/secrets.zsh 2> /dev/null
