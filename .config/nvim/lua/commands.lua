@@ -29,3 +29,7 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = true
   end,
 })
+
+vim.cmd([[
+  au BufEnter *.jpg,*.png terminal timg -p h %
+]])
