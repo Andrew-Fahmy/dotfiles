@@ -1,9 +1,11 @@
 vim.api.nvim_create_user_command("Light", function()
   vim.api.nvim_set_option_value("background", "light", {})
+  vim.cmd("silent !sed -i 's/dark/light/' ~/.config/alacritty/alacritty.toml")
 end, {})
 
 vim.api.nvim_create_user_command("Dark", function()
   vim.api.nvim_set_option_value("background", "dark", {})
+  vim.cmd("silent !sed -i 's/light/dark/' ~/.config/alacritty/alacritty.toml")
 end, {})
 
 vim.api.nvim_create_user_command("Colorscheme", function()
