@@ -37,7 +37,12 @@ return {
     -- git
     { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
     -- Grep
-    { "<leader>fg", function() Snacks.picker.grep({hidden = true}) end, desc = "Grep" },
+    { "<leader>fg", function() Snacks.picker.grep({
+      hidden = true,
+      exclude = {
+        "package-lock.json"
+      }
+    }) end, desc = "Grep" },
     { "<leader>fd", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
     { "<leader>fh", function() Snacks.picker.help() end, desc = "Help Pages" },
     { "<leader>fm", function() Snacks.picker.marks() end, desc = "Marks" },
