@@ -1,0 +1,13 @@
+# Font
+font-family = JetBrains Mono
+font-size = 14
+
+# Window
+window-decoration = false
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = true
+
+# Theme
+theme = dark:Gruvbox Dark, light:Gruvbox Light
