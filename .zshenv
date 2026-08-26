@@ -1,10 +1,6 @@
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$HOME/.cache"
+export ZDOTDIR="$HOME/.config/zsh"
 
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 
 export TERMINAL="alacritty"
 export BROWSER="firefox"

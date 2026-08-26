@@ -7,7 +7,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 setopt nocaseglob
 compinit
 
-HISTFILE=$XDG_CACHE_HOME/zsh/.histfile
+HISTFILE=$HOME/.cache/zsh/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 
@@ -101,16 +101,16 @@ alias gco='git checkout'
 
 alias xclip='xclip -sel clip'
 
-alias t='$XDG_CONFIG_HOME/tmux/default.sh'
+alias t='$HOME/.config/tmux/default.sh'
 
 
 typeset -U path
 path+=$HOME/.local/bin
 path+=$HOME/.npm-global/bin
-path+=${XDG_DATA_HOME}/pnpm
+path+=$HOME/.local/share/pnpm
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  2> /dev/null
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2> /dev/null
 source /usr/share/fzf/shell/key-bindings.zsh 2> /dev/null
 
-source ${XDG_CONFIG_HOME}/zsh/secrets.zsh 2> /dev/null
+source $HOME/.config/zsh/secrets.zsh 2> /dev/null
