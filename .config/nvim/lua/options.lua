@@ -3,7 +3,6 @@ vim.g.maplocalleader = " "
 
 vim.opt.colorcolumn = "80"
 
-vim.g.have_nerd_font = true
 vim.opt.number = true
 
 vim.opt.wrap = false
@@ -23,7 +22,6 @@ vim.opt.expandtab = true
 
 -- Save undo history
 vim.opt.undofile = true
-vim.opt.undodir = vim.fn.stdpath("cache") .. "/undo"
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -63,7 +61,7 @@ vim.diagnostic.config({
   },
   float = {
     border = 'none',
-    source = "always",
+    source = true,
   },
 })
 

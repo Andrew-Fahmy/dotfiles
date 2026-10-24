@@ -35,7 +35,7 @@ return {
     })
 
     local pid = vim.fn.getpid()
-    local omnisharp_bin = "/home/andrew/.local/share/nvim/mason/bin/OmniSharp"
+    local omnisharp_bin = vim.fn.stdpath("data") .. "/mason/bin/OmniSharp"
     vim.lsp.config["omnisharp"] = {
       cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
     }

@@ -1,8 +1,7 @@
 return {
-  'echasnovski/mini.nvim',
+  'nvim-mini/mini.nvim',
   version = '*',
   config = function()
-    require('mini.comment').setup()
     require('mini.icons').setup()
   end,
 }
